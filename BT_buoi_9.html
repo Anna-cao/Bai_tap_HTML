@@ -31,13 +31,58 @@ let arr = fullName.split(" ");
 
 let ho = arr[0];
 let ten = arr[arr.length-1];
-let tenDem = arr[1];
+let tenDem = "";
+for(let i = 1; i < arr.length-1; i++)
+{
+    tenDem += arr[i].charAt(0);
+}
 
-let email = ten.toLowerCase() + ho[0].toLowerCase() + tenDem[0].toLowerCase()
+let email = ten.toLowerCase() + ho[0].toLowerCase() + tenDem.toLowerCase()
 + "." + studentId.toLowerCase() + "@hvnh.edu.vn";
 
 let khoa = studentId.substring(0,2);
-let faculty = studentId.substring(2,3);
+let faculty;
+
+if(isNaN(studentId.substring(0,2))) 
+{
+    let code = studentId.substring(0,2);
+
+    if(code == "CO")
+        faculty = "Coventry";
+    else if(code == "CA")
+        faculty = "CityU";
+    else if(studentId.substring(0,1) == "F")
+        faculty = "Sunderland";
+    else
+        faculty = "Không xác định";
+}
+
+else 
+{
+    let code = studentId.substring(3,6);
+
+    if(code == "404")
+        faculty = "CNTT & KTS";
+    else if(code == "402")
+        faculty = "Kế toán - Kiểm toán";
+    else if(code == "403")
+        faculty = "Quản trị kinh doanh";
+    else if(code == "401")
+        faculty = "Tài chính";
+    else if(code == "405")
+        faculty = "Kinh doanh quốc tế";
+    else if(code == "406")
+        faculty = "Luật";
+    else if(code == "407")
+        faculty = "Kinh tế";
+    else if(code == "408")
+        faculty = "Khoa học dữ liệu";
+    else if(code == "751")
+        faculty = "Ngoại ngữ";
+    else
+        faculty = "Không xác định";
+}
+
 
 let last4 = studentId.substring(studentId.length-4);
 
