@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Danh sách sinh viên HVNH</title>
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-    <style>
-        body { font-family: Arial; margin: 40px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-        th, td { border: 1px solid black; padding: 8px; text-align: center; }
-        th { background: #e6e6e6; }
-        /* Màu sắc theo khoa dựa trên file BT_buoi_9 */
-        .cntt { background: #d1f0ff; }
-        .ktkt { background: #ffe0cc; }
-        .qtkd { background: #e6ffd9; }
-        .tc { background: #fff3cd; }
-    </style>
+<meta charset="UTF-8">
+<title>Danh sách sinh viên HVNH</title>
+
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+<style>
+
+body{
+font-family: Arial;
+margin:40px;
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid black;
+padding:8px;
+text-align:center;
+}
+
+th{
+background:#e6e6e6;
+}
+
+.cntt{
+background:#d1f0ff;
+}
+
+.ktkt{
+background:#ffe0cc;
+}
+
+.qtkd{
+background:#e6ffd9;
+}
+
+.tc{
+background:#fff3cd;
+}
+
+</style>
+
 </head>
+
 <body>
-    <h2>Quản lý Danh sách Sinh viên</h2>
-    <input type="file" id="fileInput" accept=".xlsx, .xls">
-    <br><br>
-    <input type="text" id="searchBox" placeholder="Tìm theo tên hoặc MSV...">
-    <button onclick="sortStudents()">Sắp xếp theo MSV</button>
-    <p id="total"></p>
 
-    <table id="studentTable">
-        <thead>
-            <tr>
-                <th>MSV</th>
-                <th>Họ tên</th>
-                <th>Khóa</th>
-                <th>Khoa</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+<h2>Quản lý danh sách sinh viên</h2>
 
-    <script src="script.js"></script>
+<input type="file" id="fileInput" accept=".xlsx,.xls">
+
+<p id="total"></p>
+
+<table id="studentTable">
+
+<thead>
+
+<tr>
+<th>MSV</th>
+<th>Họ tên</th>
+<th>Khóa</th>
+<th>Khoa</th>
+<th>Email</th>
+</tr>
+
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+<script src="script.js"></script>
+
 </body>
 </html>
